@@ -8,6 +8,7 @@
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
 #include <WiFi.h>
+#include <WiFiClientSecure.h>
 
 static const uint32_t OTA_CHECK_INTERVAL_MS = 24UL * 3600UL * 1000UL;
 static uint32_t       _last_check           = 0;
@@ -37,7 +38,9 @@ static void doFlash(const char* binUrl) {
     httpUpdate.setLedPin(LED_STATUS, HIGH);
     httpUpdate.rebootOnUpdate(false);
 
-    WiFiClient wfc;
+    // HTTPS tamogatas (GitHub releases HTTPS-t hasznal)
+    WiFiClientSecure wfc;
+    wfc.setInsecure();  // cert ellenorzes ki (belso OTA, nem publikus adat)
     t_httpUpdate_return ret = httpUpdate.update(wfc, binUrl);
 
     switch (ret) {

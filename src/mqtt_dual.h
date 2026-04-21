@@ -16,6 +16,8 @@ public:
 
     void publishData(const DeyeData& data);
     void publishHB();
+    void publishHADiscovery();
+    void publishHAState();
 
     bool ghOk() const { return _g_connected; }
 
@@ -38,7 +40,10 @@ private:
 
     void _connectG();
     void _handleCmd(const char* topic, const char* payload);
+    void _handleHASet(const char* key, const char* payload);
     void _handleGhHeartbeat(const char* payload);
+
+    JsonDocument _ha_state;  // utolso ismert HA control allapot (retained)
 
     static void _gTimerCb(TimerHandle_t t);
 };

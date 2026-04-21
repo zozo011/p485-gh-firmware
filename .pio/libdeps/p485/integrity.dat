@@ -1,0 +1,5 @@
+tzapu/WiFiManager @ ^2.0.17
+me-no-dev/ESPAsyncWebServer @ ^1.2.4
+bblanchon/ArduinoJson @ ^7.0.0
+heman/AsyncMqttClient-esphome @ ^2.1.0
+me-no-dev/AsyncTCP @ ^1.1.1

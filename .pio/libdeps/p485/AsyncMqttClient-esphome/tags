@@ -1,0 +1,445 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/jimmy/proj/async-mqtt-client/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+0	library.json	/^      "platforms": ["espressif32", "libretiny"]$/;"	s	array:dependencies.1.platforms
+0	library.json	/^    {$/;"	o	array:dependencies
+0	library.json	/^  "platforms": ["espressif8266", "espressif32", "rp2040", "libretiny"],$/;"	s	array:platforms
+1	library.json	/^      "platforms": ["espressif32", "libretiny"]$/;"	s	array:dependencies.1.platforms
+1	library.json	/^    {$/;"	o	array:dependencies
+1	library.json	/^  "platforms": ["espressif8266", "espressif32", "rp2040", "libretiny"],$/;"	s	array:platforms
+1. [Getting started](1.-Getting-started.md)	docs/index.md	/^#### 1. [Getting started](1.-Getting-started.md)$/;"	t
+1a. For the Arduino IDE	docs/1.-Getting-started.md	/^### 1a. For the Arduino IDE$/;"	S	section:Getting started""Installing AsyncMqttClient
+2	library.json	/^  "platforms": ["espressif8266", "espressif32", "rp2040", "libretiny"],$/;"	s	array:platforms
+2. [API reference](2.-API-reference.md)	docs/index.md	/^#### 2. [API reference](2.-API-reference.md)$/;"	t
+3	library.json	/^  "platforms": ["espressif8266", "espressif32", "rp2040", "libretiny"],$/;"	s	array:platforms
+3. [Memory management](3.-Memory-management.md)	docs/index.md	/^#### 3. [Memory management](3.-Memory-management.md)$/;"	t
+4. [Limitations and known issues](4.-Limitations-and-known-issues.md)	docs/index.md	/^#### 4. [Limitations and known issues](4.-Limitations-and-known-issues.md)$/;"	t
+5. [Troubleshooting](5.-Troubleshooting.md)	docs/index.md	/^#### 5. [Troubleshooting](5.-Troubleshooting.md)$/;"	t
+API reference	docs/2.-API-reference.md	/^# API reference$/;"	c
+Async MQTT client for ESP8266 and ESP32	README.md	/^Async MQTT client for ESP8266 and ESP32$/;"	c
+AsyncMqttClient	src/AsyncMqttClient.cpp	/^AsyncMqttClient::AsyncMqttClient()$/;"	f	class:AsyncMqttClient
+AsyncMqttClient	src/AsyncMqttClient.hpp	/^class AsyncMqttClient {$/;"	c
+AsyncMqttClient documentation	docs/README.md	/^AsyncMqttClient documentation$/;"	c
+AsyncMqttClient& addServerFingerprint(const uint8_t\\* `fingerprint`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& addServerFingerprint(const uint8_t\\* `fingerprint`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& onConnect(AsyncMqttClientInternals::OnConnectUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onConnect(AsyncMqttClientInternals::OnConnectUserCallback `callback`)$/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& onDisconnect(AsyncMqttClientInternals::OnDisconnectUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onDisconnect(AsyncMqttClientInternals::OnDisconnectUserCallback `callback`/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& onMessage(AsyncMqttClientInternals::OnMessageUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onMessage(AsyncMqttClientInternals::OnMessageUserCallback `callback`)$/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& onPublish(AsyncMqttClientInternals::OnPublishUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onPublish(AsyncMqttClientInternals::OnPublishUserCallback `callback`)$/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& onSubscribe(AsyncMqttClientInternals::OnSubscribeUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onSubscribe(AsyncMqttClientInternals::OnSubscribeUserCallback `callback`)$/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& onUnsubscribe(AsyncMqttClientInternals::OnUnsubscribeUserCallback `callback`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& onUnsubscribe(AsyncMqttClientInternals::OnUnsubscribeUserCallback `callbac/;"	t	subsection:API reference""Events handlers
+AsyncMqttClient& setCleanSession(bool `cleanSession`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setCleanSession(bool `cleanSession`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setClientId(const char\\* `clientId`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setClientId(const char\\* `clientId`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setCredentials(const char\\* `username`, const char\\* `password` = nullptr)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setCredentials(const char\\* `username`, const char\\* `password` = nullpt/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setKeepAlive(uint16_t `keepAlive`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setKeepAlive(uint16_t `keepAlive`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setMaxTopicLength(uint16_t `maxTopicLength`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setMaxTopicLength(uint16_t `maxTopicLength`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setSecure(bool `secure`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setSecure(bool `secure`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setServer(IPAddress `ip`, uint16_t `port`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setServer(IPAddress `ip`, uint16_t `port`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setServer(const char\\* `host`, uint16_t `port`)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setServer(const char\\* `host`, uint16_t `port`)$/;"	t	subsection:API reference""Configuration
+AsyncMqttClient& setWill(const char\\* `topic`, uint8_t `qos`, bool `retain`, const char\\* `payload` = nullptr, size_t `length` = 0)	docs/2.-API-reference.md	/^#### AsyncMqttClient& setWill(const char\\* `topic`, uint8_t `qos`, bool `retain`, const char\\*/;"	t	subsection:API reference""Configuration
+AsyncMqttClient()	docs/2.-API-reference.md	/^#### AsyncMqttClient()$/;"	t	chapter:API reference
+AsyncMqttClientDisconnectReason	src/AsyncMqttClient/DisconnectReasons.hpp	/^enum class AsyncMqttClientDisconnectReason : int8_t {$/;"	g	typeref:typename:int8_t
+AsyncMqttClientInternals	src/AsyncMqttClient/Callbacks.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Flags.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Helpers.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/Packet.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PingRespPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/ParsingInformation.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientInternals	src/AsyncMqttClient/Storage.hpp	/^namespace AsyncMqttClientInternals {$/;"	n
+AsyncMqttClientMessageProperties	src/AsyncMqttClient/MessageProperties.hpp	/^struct AsyncMqttClientMessageProperties {$/;"	s
+BufferState	src/AsyncMqttClient/ParsingInformation.hpp	/^enum class BufferState : uint8_t {$/;"	g	namespace:AsyncMqttClientInternals	typeref:typename:uint8_t
+CLEAN_SESSION	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t CLEAN_SESSION = 0x02;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+CONNACK	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t CONNACK     = 2;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+CONNACK_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t CONNACK_RESERVED     = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+CONNECT	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t CONNECT     = 1;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+CONNECT_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t CONNECT_RESERVED     = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+Configuration	docs/2.-API-reference.md	/^### Configuration$/;"	S	chapter:API reference
+ConnAckPacket	src/AsyncMqttClient/Packets/ConnAckPacket.cpp	/^ConnAckPacket::ConnAckPacket(ParsingInformation* parsingInformation, OnConnAckInternalCallback c/;"	f	class:ConnAckPacket
+ConnAckPacket	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^class ConnAckPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+ConnectFlag	src/AsyncMqttClient/Flags.hpp	/^} ConnectFlag;$/;"	v	namespace:AsyncMqttClientInternals	typeref:struct:AsyncMqttClientInternals::__anon74a066910308
+DISCONNECT	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t DISCONNECT  = 14;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+DISCONNECT_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t DISCONNECT_RESERVED  = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+ESP8266_NOT_ENOUGH_SPACE	src/AsyncMqttClient/DisconnectReasons.hpp	/^  ESP8266_NOT_ENOUGH_SPACE = 6,$/;"	e	enum:AsyncMqttClientDisconnectReason
+Events handlers	docs/2.-API-reference.md	/^### Events handlers$/;"	S	chapter:API reference
+Features	README.md	/^## Features$/;"	s	chapter:Async MQTT client for ESP8266 and ESP32
+Fully-featured sketch	docs/1.-Getting-started.md	/^## Fully-featured sketch$/;"	s	chapter:Getting started
+Getting started	docs/1.-Getting-started.md	/^# Getting started$/;"	c
+HeaderFlag	src/AsyncMqttClient/Flags.hpp	/^} HeaderFlag;$/;"	v	namespace:AsyncMqttClientInternals	typeref:struct:AsyncMqttClientInternals::__anon74a066910208
+Helpers	src/AsyncMqttClient/Helpers.hpp	/^class Helpers {$/;"	c	namespace:AsyncMqttClientInternals
+Installing AsyncMqttClient	docs/1.-Getting-started.md	/^## Installing AsyncMqttClient$/;"	s	chapter:Getting started
+Limitations and known issues	docs/4.-Limitations-and-known-issues.md	/^# Limitations and known issues$/;"	c
+MQTT_HOST	examples/FullyFeaturedSSL/src/main.cpp	/^#define MQTT_HOST /;"	d	file:
+MQTT_IDENTIFIER_REJECTED	src/AsyncMqttClient/DisconnectReasons.hpp	/^  MQTT_IDENTIFIER_REJECTED = 2,$/;"	e	enum:AsyncMqttClientDisconnectReason
+MQTT_MALFORMED_CREDENTIALS	src/AsyncMqttClient/DisconnectReasons.hpp	/^  MQTT_MALFORMED_CREDENTIALS = 4,$/;"	e	enum:AsyncMqttClientDisconnectReason
+MQTT_NOT_AUTHORIZED	src/AsyncMqttClient/DisconnectReasons.hpp	/^  MQTT_NOT_AUTHORIZED = 5,$/;"	e	enum:AsyncMqttClientDisconnectReason
+MQTT_PORT	examples/FullyFeaturedSSL/src/main.cpp	/^#define MQTT_PORT /;"	d	file:
+MQTT_SECURE	examples/FullyFeaturedSSL/src/main.cpp	/^#define MQTT_SECURE /;"	d	file:
+MQTT_SERVER_FINGERPRINT	examples/FullyFeaturedSSL/src/main.cpp	/^#define MQTT_SERVER_FINGERPRINT /;"	d	file:
+MQTT_SERVER_UNAVAILABLE	src/AsyncMqttClient/DisconnectReasons.hpp	/^  MQTT_SERVER_UNAVAILABLE = 3,$/;"	e	enum:AsyncMqttClientDisconnectReason
+MQTT_UNACCEPTABLE_PROTOCOL_VERSION	src/AsyncMqttClient/DisconnectReasons.hpp	/^  MQTT_UNACCEPTABLE_PROTOCOL_VERSION = 1,$/;"	e	enum:AsyncMqttClientDisconnectReason
+Memory management	docs/3.-Memory-management.md	/^# Memory management$/;"	c
+NONE	src/AsyncMqttClient/ParsingInformation.hpp	/^  NONE = 0,$/;"	e	enum:AsyncMqttClientInternals::BufferState
+OnConnAckInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(bool sessionPresent, uint8_t connectReturnCode)> OnConnAckInternalCal/;"	t	namespace:AsyncMqttClientInternals
+OnConnectUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(bool sessionPresent)> OnConnectUserCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnDisconnectUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(AsyncMqttClientDisconnectReason reason)> OnDisconnectUserCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnMessageInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(char* topic, char* payload, uint8_t qos, bool dup, bool retain, size_/;"	t	namespace:AsyncMqttClientInternals
+OnMessageUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(char* topic, char* payload, AsyncMqttClientMessageProperties properti/;"	t	namespace:AsyncMqttClientInternals
+OnPingRespInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void()> OnPingRespInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPubAckInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnPubAckInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPubCompInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnPubCompInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPubRecInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnPubRecInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPubRelInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnPubRelInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPublishInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId, uint8_t qos)> OnPublishInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnPublishUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnPublishUserCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnSubAckInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId, char status)> OnSubAckInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnSubscribeUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId, uint8_t qos)> OnSubscribeUserCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnUnsubAckInternalCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnUnsubAckInternalCallback;$/;"	t	namespace:AsyncMqttClientInternals
+OnUnsubscribeUserCallback	src/AsyncMqttClient/Callbacks.hpp	/^typedef std::function<void(uint16_t packetId)> OnUnsubscribeUserCallback;$/;"	t	namespace:AsyncMqttClientInternals
+Operation functions	docs/2.-API-reference.md	/^### Operation functions$/;"	S	chapter:API reference
+PASSWORD	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PASSWORD      = 0x40;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+PAYLOAD	src/AsyncMqttClient/ParsingInformation.hpp	/^  PAYLOAD = 4$/;"	e	enum:AsyncMqttClientInternals::BufferState
+PINGREQ	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PINGREQ     = 12;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PINGREQ_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PINGREQ_RESERVED     = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PINGRESP	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PINGRESP    = 13;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PINGRESP_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PINGRESP_RESERVED    = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBACK	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBACK      = 4;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PUBACK_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBACK_RESERVED      = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBCOMP	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBCOMP     = 7;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PUBCOMP_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBCOMP_RESERVED     = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH     = 3;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PUBLISH_DUP	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_DUP          = 0x08;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH_QOS0	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_QOS0         = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH_QOS1	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_QOS1         = 0x02;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH_QOS2	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_QOS2         = 0x04;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH_QOSRESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_QOSRESERVED  = 0x06;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBLISH_RETAIN	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBLISH_RETAIN       = 0x01;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBREC	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBREC      = 5;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PUBREC_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBREC_RESERVED      = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+PUBREL	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBREL      = 6;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+PUBREL_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t PUBREL_RESERVED      = 0x02;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+Packet	src/AsyncMqttClient/Packets/Packet.hpp	/^class Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PacketType	src/AsyncMqttClient/Flags.hpp	/^} PacketType;$/;"	v	namespace:AsyncMqttClientInternals	typeref:struct:AsyncMqttClientInternals::__anon74a066910108
+ParsingInformation	src/AsyncMqttClient/ParsingInformation.hpp	/^struct ParsingInformation {$/;"	s	namespace:AsyncMqttClientInternals
+PendingAck	src/AsyncMqttClient/Storage.hpp	/^struct PendingAck {$/;"	s	namespace:AsyncMqttClientInternals
+PendingPubRel	src/AsyncMqttClient/Storage.hpp	/^struct PendingPubRel {$/;"	s	namespace:AsyncMqttClientInternals
+PingRespPacket	src/AsyncMqttClient/Packets/PingRespPacket.cpp	/^PingRespPacket::PingRespPacket(ParsingInformation* parsingInformation, OnPingRespInternalCallbac/;"	f	class:PingRespPacket
+PingRespPacket	src/AsyncMqttClient/Packets/PingRespPacket.hpp	/^class PingRespPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PubAckPacket	src/AsyncMqttClient/Packets/PubAckPacket.cpp	/^PubAckPacket::PubAckPacket(ParsingInformation* parsingInformation, OnPubAckInternalCallback call/;"	f	class:PubAckPacket
+PubAckPacket	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^class PubAckPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PubCompPacket	src/AsyncMqttClient/Packets/PubCompPacket.cpp	/^PubCompPacket::PubCompPacket(ParsingInformation* parsingInformation, OnPubCompInternalCallback c/;"	f	class:PubCompPacket
+PubCompPacket	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^class PubCompPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PubRecPacket	src/AsyncMqttClient/Packets/PubRecPacket.cpp	/^PubRecPacket::PubRecPacket(ParsingInformation* parsingInformation, OnPubRecInternalCallback call/;"	f	class:PubRecPacket
+PubRecPacket	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^class PubRecPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PubRelPacket	src/AsyncMqttClient/Packets/PubRelPacket.cpp	/^PubRelPacket::PubRelPacket(ParsingInformation* parsingInformation, OnPubRelInternalCallback call/;"	f	class:PubRelPacket
+PubRelPacket	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^class PubRelPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+PublishPacket	src/AsyncMqttClient/Packets/PublishPacket.cpp	/^PublishPacket::PublishPacket(ParsingInformation* parsingInformation, OnMessageInternalCallback d/;"	f	class:PublishPacket
+PublishPacket	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^class PublishPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+REMAINING_LENGTH	src/AsyncMqttClient/ParsingInformation.hpp	/^  REMAINING_LENGTH = 2,$/;"	e	enum:AsyncMqttClientInternals::BufferState
+RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t RESERVED      = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t RESERVED    = 0;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+RESERVED2	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t RESERVED2   = 1;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+RESERVED2_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t RESERVED2_RESERVED   = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+Requirements, installation and usage	README.md	/^## Requirements, installation and usage$/;"	s	chapter:Async MQTT client for ESP8266 and ESP32
+SEMAPHORE_GIVE	src/AsyncMqttClient.hpp	/^#define SEMAPHORE_GIVE(/;"	d
+SEMAPHORE_TAKE	src/AsyncMqttClient.hpp	/^#define SEMAPHORE_TAKE(/;"	d
+SHA1_SIZE	src/AsyncMqttClient.hpp	/^#define SHA1_SIZE /;"	d
+SRC_ASYNCMQTTCLIENT_H_	src/AsyncMqttClient.h	/^#define SRC_ASYNCMQTTCLIENT_H_$/;"	d
+SSL limitations	docs/4.-Limitations-and-known-issues.md	/^## SSL limitations$/;"	s	chapter:Limitations and known issues
+SUBACK	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t SUBACK      = 9;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+SUBACK_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t SUBACK_RESERVED      = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+SUBSCRIBE	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t SUBSCRIBE   = 8;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+SUBSCRIBE_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t SUBSCRIBE_RESERVED   = 0x02;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+SubAckPacket	src/AsyncMqttClient/Packets/SubAckPacket.cpp	/^SubAckPacket::SubAckPacket(ParsingInformation* parsingInformation, OnSubAckInternalCallback call/;"	f	class:SubAckPacket
+SubAckPacket	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^class SubAckPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+TCP_DISCONNECTED	src/AsyncMqttClient/DisconnectReasons.hpp	/^  TCP_DISCONNECTED = 0,$/;"	e	enum:AsyncMqttClientDisconnectReason
+TLS_BAD_FINGERPRINT	src/AsyncMqttClient/DisconnectReasons.hpp	/^  TLS_BAD_FINGERPRINT = 7$/;"	e	enum:AsyncMqttClientDisconnectReason
+Troubleshooting	docs/5.-Troubleshooting.md	/^# Troubleshooting$/;"	c
+UNSUBACK	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t UNSUBACK    = 11;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+UNSUBACK_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t UNSUBACK_RESERVED    = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+UNSUBSCRIBE	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t UNSUBSCRIBE = 10;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910108	typeref:typename:const uint8_t
+UNSUBSCRIBE_RESERVED	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t UNSUBSCRIBE_RESERVED = 0x02;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910208	typeref:typename:const uint8_t
+USERNAME	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t USERNAME      = 0x80;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+UnsubAckPacket	src/AsyncMqttClient/Packets/UnsubAckPacket.cpp	/^UnsubAckPacket::UnsubAckPacket(ParsingInformation* parsingInformation, OnUnsubAckInternalCallbac/;"	f	class:UnsubAckPacket
+UnsubAckPacket	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^class UnsubAckPacket : public Packet {$/;"	c	namespace:AsyncMqttClientInternals
+VARIABLE_HEADER	src/AsyncMqttClient/ParsingInformation.hpp	/^  VARIABLE_HEADER = 3,$/;"	e	enum:AsyncMqttClientInternals::BufferState
+WIFI_PASSWORD	examples/FullyFeaturedSSL/src/main.cpp	/^#define WIFI_PASSWORD /;"	d	file:
+WIFI_SSID	examples/FullyFeaturedSSL/src/main.cpp	/^#define WIFI_SSID /;"	d	file:
+WILL	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t WILL          = 0x04;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+WILL_QOS0	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t WILL_QOS0     = 0x00;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+WILL_QOS1	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t WILL_QOS1     = 0x08;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+WILL_QOS2	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t WILL_QOS2     = 0x10;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+WILL_RETAIN	src/AsyncMqttClient/Flags.hpp	/^  const uint8_t WILL_RETAIN   = 0x20;$/;"	m	struct:AsyncMqttClientInternals::__anon74a066910308	typeref:typename:const uint8_t
+__anon74a066910108	src/AsyncMqttClient/Flags.hpp	/^constexpr struct {$/;"	s	namespace:AsyncMqttClientInternals
+__anon74a066910208	src/AsyncMqttClient/Flags.hpp	/^constexpr struct {$/;"	s	namespace:AsyncMqttClientInternals
+__anon74a066910308	src/AsyncMqttClient/Flags.hpp	/^constexpr struct {$/;"	s	namespace:AsyncMqttClientInternals
+__anona69cf3f00102	src/AsyncMqttClient.cpp	/^  _client.onConnect([](void* obj, AsyncClient* c) { (static_cast<AsyncMqttClient*>(obj))->_onCon/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00202	src/AsyncMqttClient.cpp	/^  _client.onDisconnect([](void* obj, AsyncClient* c) { (static_cast<AsyncMqttClient*>(obj))->_on/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00302	src/AsyncMqttClient.cpp	/^  _client.onError([](void* obj, AsyncClient* c, int8_t error) { (static_cast<AsyncMqttClient*>(o/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00402	src/AsyncMqttClient.cpp	/^  _client.onTimeout([](void* obj, AsyncClient* c, uint32_t time) { (static_cast<AsyncMqttClient*/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00502	src/AsyncMqttClient.cpp	/^  _client.onAck([](void* obj, AsyncClient* c, size_t len, uint32_t time) { (static_cast<AsyncMqt/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00602	src/AsyncMqttClient.cpp	/^  _client.onData([](void* obj, AsyncClient* c, void* data, size_t len) { (static_cast<AsyncMqttC/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+__anona69cf3f00702	src/AsyncMqttClient.cpp	/^  _client.onPoll([](void* obj, AsyncClient* c) { (static_cast<AsyncMqttClient*>(obj))->_onPoll(c/;"	f	function:AsyncMqttClient::AsyncMqttClient	file:
+_bytePosition	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::ConnAckPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::PubAckPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::PubCompPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::PubRecPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::PubRelPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::SubAckPacket	typeref:typename:uint8_t
+_bytePosition	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^  uint8_t _bytePosition;$/;"	m	class:AsyncMqttClientInternals::UnsubAckPacket	typeref:typename:uint8_t
+_callback	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^  OnConnAckInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::ConnAckPacket	typeref:typename:OnConnAckInternalCallback
+_callback	src/AsyncMqttClient/Packets/PingRespPacket.hpp	/^  OnPingRespInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::PingRespPacket	typeref:typename:OnPingRespInternalCallback
+_callback	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^  OnPubAckInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::PubAckPacket	typeref:typename:OnPubAckInternalCallback
+_callback	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^  OnPubCompInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::PubCompPacket	typeref:typename:OnPubCompInternalCallback
+_callback	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^  OnPubRecInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::PubRecPacket	typeref:typename:OnPubRecInternalCallback
+_callback	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^  OnPubRelInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::PubRelPacket	typeref:typename:OnPubRelInternalCallback
+_callback	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^  OnSubAckInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::SubAckPacket	typeref:typename:OnSubAckInternalCallback
+_callback	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^  OnUnsubAckInternalCallback _callback;$/;"	m	class:AsyncMqttClientInternals::UnsubAckPacket	typeref:typename:OnUnsubAckInternalCallback
+_cleanSession	src/AsyncMqttClient.hpp	/^  bool _cleanSession;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_clear	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_clear() {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_client	src/AsyncMqttClient.hpp	/^  AsyncClient _client;$/;"	m	class:AsyncMqttClient	typeref:typename:AsyncClient
+_clientId	src/AsyncMqttClient.hpp	/^  const char* _clientId;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_completeCallback	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  OnPublishInternalCallback _completeCallback;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:OnPublishInternalCallback
+_connectPacketNotEnoughSpace	src/AsyncMqttClient.hpp	/^  bool _connectPacketNotEnoughSpace;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_connectReturnCode	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^  uint8_t _connectReturnCode;$/;"	m	class:AsyncMqttClientInternals::ConnAckPacket	typeref:typename:uint8_t
+_connected	src/AsyncMqttClient.hpp	/^  bool _connected;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_currentParsedPacket	src/AsyncMqttClient.hpp	/^  AsyncMqttClientInternals::Packet* _currentParsedPacket;$/;"	m	class:AsyncMqttClient	typeref:typename:AsyncMqttClientInternals::Packet *
+_dataCallback	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  OnMessageInternalCallback _dataCallback;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:OnMessageInternalCallback
+_disconnectOnPoll	src/AsyncMqttClient.hpp	/^  bool _disconnectOnPoll;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_dup	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  bool _dup;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:bool
+_freeCurrentParsedPacket	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_freeCurrentParsedPacket() {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_generatedClientId	src/AsyncMqttClient.hpp	/^  char _generatedClientId[18 + 1];  \/\/ esp8266-abc123 and esp32-abcdef123456 $/;"	m	class:AsyncMqttClient	typeref:typename:char[]
+_getNextPacketId	src/AsyncMqttClient.cpp	/^uint16_t AsyncMqttClient::_getNextPacketId() {$/;"	f	class:AsyncMqttClient	typeref:typename:uint16_t
+_host	src/AsyncMqttClient.hpp	/^  const char* _host;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_ignore	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  bool _ignore;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:bool
+_ip	src/AsyncMqttClient.hpp	/^  IPAddress _ip;$/;"	m	class:AsyncMqttClient	typeref:typename:IPAddress
+_keepAlive	src/AsyncMqttClient.hpp	/^  uint16_t _keepAlive;$/;"	m	class:AsyncMqttClient	typeref:typename:uint16_t
+_lastClientActivity	src/AsyncMqttClient.hpp	/^  uint32_t _lastClientActivity;$/;"	m	class:AsyncMqttClient	typeref:typename:uint32_t
+_lastPingRequestTime	src/AsyncMqttClient.hpp	/^  uint32_t _lastPingRequestTime;$/;"	m	class:AsyncMqttClient	typeref:typename:uint32_t
+_lastServerActivity	src/AsyncMqttClient.hpp	/^  uint32_t _lastServerActivity;$/;"	m	class:AsyncMqttClient	typeref:typename:uint32_t
+_nextPacketId	src/AsyncMqttClient.hpp	/^  uint16_t _nextPacketId;$/;"	m	class:AsyncMqttClient	typeref:typename:uint16_t
+_onAck	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onAck(AsyncClient* client, size_t len, uint32_t time) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onConnAck	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onConnAck(bool sessionPresent, uint8_t connectReturnCode) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onConnect	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onConnect(AsyncClient* client) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onConnectUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnConnectUserCallback> _onConnectUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnConnectUserCallback>
+_onData	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onData(AsyncClient* client, uint8_t* data, size_t len) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onDisconnect	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onDisconnect(AsyncClient* client) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onDisconnectUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnDisconnectUserCallback> _onDisconnectUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnDisconnectUserCallback>
+_onError	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onError(AsyncClient* client, int8_t error) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onMessage	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onMessage(char* topic, char* payload, uint8_t qos, bool dup, bool retain,/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onMessageUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnMessageUserCallback> _onMessageUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnMessageUserCallback>
+_onPingResp	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPingResp() {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPoll	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPoll(AsyncClient* client) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPubAck	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPubAck(uint16_t packetId) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPubComp	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPubComp(uint16_t packetId) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPubRec	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPubRec(uint16_t packetId) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPubRel	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPubRel(uint16_t packetId) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPublish	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onPublish(uint16_t packetId, uint8_t qos) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onPublishUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnPublishUserCallback> _onPublishUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnPublishUserCallback>
+_onSubAck	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onSubAck(uint16_t packetId, char status) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onSubscribeUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnSubscribeUserCallback> _onSubscribeUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnSubscribeUserCallback>
+_onTimeout	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onTimeout(AsyncClient* client, uint32_t time) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onUnsubAck	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_onUnsubAck(uint16_t packetId) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_onUnsubscribeUserCallbacks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::OnUnsubscribeUserCallback> _onUnsubscribeUserCallbacks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::OnUnsubscribeUserCallback>
+_packetId	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::PubAckPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::PubCompPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::PubRecPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::PubRelPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::SubAckPacket	typeref:typename:uint16_t
+_packetId	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^  uint16_t _packetId;$/;"	m	class:AsyncMqttClientInternals::UnsubAckPacket	typeref:typename:uint16_t
+_packetIdMsb	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::PubAckPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::PubCompPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::PubRecPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::PubRelPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::SubAckPacket	typeref:typename:uint8_t
+_packetIdMsb	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^  uint8_t _packetIdMsb;$/;"	m	class:AsyncMqttClientInternals::UnsubAckPacket	typeref:typename:uint8_t
+_parsingInformation	src/AsyncMqttClient.hpp	/^  AsyncMqttClientInternals::ParsingInformation _parsingInformation;$/;"	m	class:AsyncMqttClient	typeref:typename:AsyncMqttClientInternals::ParsingInformation
+_parsingInformation	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::ConnAckPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PingRespPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PingRespPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PubAckPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PubAckPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PubCompPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PubCompPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PubRecPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PubRecPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PubRelPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PubRelPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/SubAckPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::SubAckPacket	typeref:typename:ParsingInformation *
+_parsingInformation	src/AsyncMqttClient/Packets/UnsubAckPacket.hpp	/^  ParsingInformation* _parsingInformation;$/;"	m	class:AsyncMqttClientInternals::UnsubAckPacket	typeref:typename:ParsingInformation *
+_password	src/AsyncMqttClient.hpp	/^  const char* _password;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_payloadBytesRead	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint32_t _payloadBytesRead;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint32_t
+_payloadLength	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint32_t _payloadLength;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint32_t
+_pendingPubRels	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::PendingPubRel> _pendingPubRels;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::PendingPubRel>
+_port	src/AsyncMqttClient.hpp	/^  uint16_t _port;$/;"	m	class:AsyncMqttClient	typeref:typename:uint16_t
+_preparePayloadHandling	src/AsyncMqttClient/Packets/PublishPacket.cpp	/^void PublishPacket::_preparePayloadHandling(uint32_t payloadLength) {$/;"	f	class:PublishPacket	typeref:typename:void
+_qos	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint8_t _qos;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint8_t
+_remainingLengthBuffer	src/AsyncMqttClient.hpp	/^  char _remainingLengthBuffer[4];$/;"	m	class:AsyncMqttClient	typeref:typename:char[4]
+_remainingLengthBufferPosition	src/AsyncMqttClient.hpp	/^  uint8_t _remainingLengthBufferPosition;$/;"	m	class:AsyncMqttClient	typeref:typename:uint8_t
+_retain	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  bool _retain;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:bool
+_secure	src/AsyncMqttClient.hpp	/^  bool _secure;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_secureServerFingerprints	src/AsyncMqttClient.hpp	/^  std::vector<std::array<uint8_t, SHA1_SIZE>> _secureServerFingerprints;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<std::array<uint8_t,SHA1_SIZE>>
+_sendAcks	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::_sendAcks() {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+_sendDisconnect	src/AsyncMqttClient.cpp	/^bool AsyncMqttClient::_sendDisconnect() {$/;"	f	class:AsyncMqttClient	typeref:typename:bool
+_sendPing	src/AsyncMqttClient.cpp	/^bool AsyncMqttClient::_sendPing() {$/;"	f	class:AsyncMqttClient	typeref:typename:bool
+_sessionPresent	src/AsyncMqttClient/Packets/ConnAckPacket.hpp	/^  bool _sessionPresent;$/;"	m	class:AsyncMqttClientInternals::ConnAckPacket	typeref:typename:bool
+_tlsBadFingerprint	src/AsyncMqttClient.hpp	/^  bool _tlsBadFingerprint;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_toSendAcks	src/AsyncMqttClient.hpp	/^  std::vector<AsyncMqttClientInternals::PendingAck> _toSendAcks;$/;"	m	class:AsyncMqttClient	typeref:typename:std::vector<AsyncMqttClientInternals::PendingAck>
+_topicLength	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint16_t _topicLength;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint16_t
+_topicLengthMsb	src/AsyncMqttClient/Packets/PublishPacket.hpp	/^  uint8_t _topicLengthMsb;$/;"	m	class:AsyncMqttClientInternals::PublishPacket	typeref:typename:uint8_t
+_useIp	src/AsyncMqttClient.hpp	/^  bool _useIp;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_username	src/AsyncMqttClient.hpp	/^  const char* _username;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_willPayload	src/AsyncMqttClient.hpp	/^  const char* _willPayload;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_willPayloadLength	src/AsyncMqttClient.hpp	/^  uint16_t _willPayloadLength;$/;"	m	class:AsyncMqttClient	typeref:typename:uint16_t
+_willQos	src/AsyncMqttClient.hpp	/^  uint8_t _willQos;$/;"	m	class:AsyncMqttClient	typeref:typename:uint8_t
+_willRetain	src/AsyncMqttClient.hpp	/^  bool _willRetain;$/;"	m	class:AsyncMqttClient	typeref:typename:bool
+_willTopic	src/AsyncMqttClient.hpp	/^  const char* _willTopic;$/;"	m	class:AsyncMqttClient	typeref:typename:const char *
+_xSemaphore	src/AsyncMqttClient.hpp	/^  SemaphoreHandle_t _xSemaphore = nullptr;$/;"	m	class:AsyncMqttClient	typeref:typename:SemaphoreHandle_t
+addServerFingerprint	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::addServerFingerprint(const uint8_t* fingerprint) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+args	scripts/get-fingerprint/get-fingerprint.py	/^args = parser.parse_args()$/;"	v
+authors	library.json	/^  "authors":$/;"	o
+board	examples/FullyFeaturedSSL/platformio.ini	/^board = esp01_1m$/;"	k	section:env:nossl
+board	examples/FullyFeaturedSSL/platformio.ini	/^board = esp01_1m$/;"	k	section:env:ssl
+bool connected()	docs/2.-API-reference.md	/^#### bool connected()$/;"	t	subsection:API reference""Operation functions
+bufferState	src/AsyncMqttClient/ParsingInformation.hpp	/^  BufferState bufferState;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:BufferState
+build_flags	examples/FullyFeaturedSSL/platformio.ini	/^build_flags = -DASYNC_TCP_SSL_ENABLED=1$/;"	k	section:env:ssl
+build_pio_sketch	.github/scripts/install-platformio.sh	/^function build_pio_sketch(){ # build_pio_sketch <board> <path-to-ino>$/;"	f
+build_pio_sketches	.github/scripts/install-platformio.sh	/^function build_pio_sketches() # build_pio_sketches <board> <examples-path> <chunk> <total-chunks/;"	f
+cert_der	scripts/get-fingerprint/get-fingerprint.py	/^cert_der = ssl.PEM_cert_to_DER_cert(cert_pem)$/;"	v
+cert_pem	scripts/get-fingerprint/get-fingerprint.py	/^cert_pem = ssl.get_server_certificate((args.host, args.port))$/;"	v
+connect	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::connect() {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+connectToMqtt	examples/FullyFeaturedSSL/src/main.cpp	/^void connectToMqtt() {$/;"	f	typeref:typename:void
+connectToWifi	examples/FullyFeaturedSSL/src/main.cpp	/^void connectToWifi() {$/;"	f	typeref:typename:void
+connected	src/AsyncMqttClient.cpp	/^bool AsyncMqttClient::connected() const {$/;"	f	class:AsyncMqttClient	typeref:typename:bool
+count_sketches	.github/scripts/install-platformio.sh	/^function count_sketches() # count_sketches <examples-path>$/;"	f
+cpplint	Makefile	/^cpplint:$/;"	t
+decodeRemainingLength	src/AsyncMqttClient/Helpers.hpp	/^  static uint32_t decodeRemainingLength(char* bytes) {$/;"	f	class:AsyncMqttClientInternals::Helpers	typeref:typename:uint32_t
+dependencies	library.json	/^  "dependencies": [$/;"	a
+description	library.json	/^  "description": "An Arduino for ESP8266 \/ ESP32 asynchronous MQTT client implementation",$/;"	s
+disconnect	src/AsyncMqttClient.cpp	/^void AsyncMqttClient::disconnect(bool force) {$/;"	f	class:AsyncMqttClient	typeref:typename:void
+dup	src/AsyncMqttClient/MessageProperties.hpp	/^  bool dup;$/;"	m	struct:AsyncMqttClientMessageProperties	typeref:typename:bool
+encodeRemainingLength	src/AsyncMqttClient/Helpers.hpp	/^  static uint8_t encodeRemainingLength(uint32_t remainingLength, char* destination) {$/;"	f	class:AsyncMqttClientInternals::Helpers	typeref:typename:uint8_t
+env:nossl	examples/FullyFeaturedSSL/platformio.ini	/^[env:nossl]$/;"	s
+env:ssl	examples/FullyFeaturedSSL/platformio.ini	/^[env:ssl]$/;"	s
+env_default	examples/FullyFeaturedSSL/platformio.ini	/^env_default = ssl$/;"	k	section:platformio
+framework	examples/FullyFeaturedSSL/platformio.ini	/^framework = arduino$/;"	k	section:env:nossl
+framework	examples/FullyFeaturedSSL/platformio.ini	/^framework = arduino$/;"	k	section:env:ssl
+frameworks	library.json	/^  "frameworks": "arduino",$/;"	s
+getClientId	src/AsyncMqttClient.cpp	/^const char* AsyncMqttClient::getClientId() {$/;"	f	class:AsyncMqttClient	typeref:typename:const char *
+headerFlag	src/AsyncMqttClient/Storage.hpp	/^  uint8_t headerFlag;$/;"	m	struct:AsyncMqttClientInternals::PendingAck	typeref:typename:uint8_t
+keywords	library.json	/^  "keywords": "iot, home, automation, async, mqtt, client, esp8266",$/;"	s
+lib_deps	examples/FullyFeaturedSSL/platformio.ini	/^lib_deps = AsyncMqttClient$/;"	k	section:env:nossl
+lib_deps	examples/FullyFeaturedSSL/platformio.ini	/^lib_deps = AsyncMqttClient$/;"	k	section:env:ssl
+loop	examples/FullyFeaturedSSL/src/main.cpp	/^void loop() {$/;"	f	typeref:typename:void
+maxTopicLength	src/AsyncMqttClient/ParsingInformation.hpp	/^  uint16_t maxTopicLength;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:uint16_t
+md5	scripts/get-fingerprint/get-fingerprint.py	/^md5 = hashlib.md5(cert_der).hexdigest()$/;"	v
+mqttClient	examples/FullyFeaturedSSL/src/main.cpp	/^AsyncMqttClient mqttClient;$/;"	v	typeref:typename:AsyncMqttClient
+mqttReconnectTimer	examples/FullyFeaturedSSL/src/main.cpp	/^Ticker mqttReconnectTimer;$/;"	v	typeref:typename:Ticker
+name	library.json	/^      "name": "AsyncTCP-esphome",$/;"	s	object:dependencies.1
+name	library.json	/^      "name": "ESPAsyncTCP-esphome",$/;"	s	object:dependencies.0
+name	library.json	/^    "name": "Marvin ROGER",$/;"	s	object:authors
+name	library.json	/^  "name": "AsyncMqttClient-esphome",$/;"	s
+onConnect	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onConnect(AsyncMqttClientInternals::OnConnectUserCallback call/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onDisconnect	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onDisconnect(AsyncMqttClientInternals::OnDisconnectUserCallbac/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onMessage	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onMessage(AsyncMqttClientInternals::OnMessageUserCallback call/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onMqttConnect	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttConnect(bool sessionPresent) {$/;"	f	typeref:typename:void
+onMqttDisconnect	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttDisconnect(AsyncMqttClientDisconnectReason reason) {$/;"	f	typeref:typename:void
+onMqttMessage	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttMessage(char* topic, char* payload, AsyncMqttClientMessageProperties properties, size/;"	f	typeref:typename:void
+onMqttPublish	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttPublish(uint16_t packetId) {$/;"	f	typeref:typename:void
+onMqttSubscribe	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttSubscribe(uint16_t packetId, uint8_t qos) {$/;"	f	typeref:typename:void
+onMqttUnsubscribe	examples/FullyFeaturedSSL/src/main.cpp	/^void onMqttUnsubscribe(uint16_t packetId) {$/;"	f	typeref:typename:void
+onPublish	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onPublish(AsyncMqttClientInternals::OnPublishUserCallback call/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onSubscribe	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onSubscribe(AsyncMqttClientInternals::OnSubscribeUserCallback /;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onUnsubscribe	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::onUnsubscribe(AsyncMqttClientInternals::OnUnsubscribeUserCallb/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+onWifiConnect	examples/FullyFeaturedSSL/src/main.cpp	/^void onWifiConnect(const WiFiEventStationModeGotIP& event) {$/;"	f	typeref:typename:void
+onWifiDisconnect	examples/FullyFeaturedSSL/src/main.cpp	/^void onWifiDisconnect(const WiFiEventStationModeDisconnected& event) {$/;"	f	typeref:typename:void
+owner	library.json	/^      "owner": "esphome",$/;"	s	object:dependencies.0
+owner	library.json	/^      "owner": "esphome",$/;"	s	object:dependencies.1
+packetFlags	src/AsyncMqttClient/ParsingInformation.hpp	/^  uint16_t packetFlags;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:uint16_t
+packetId	src/AsyncMqttClient/Storage.hpp	/^  uint16_t packetId;$/;"	m	struct:AsyncMqttClientInternals::PendingAck	typeref:typename:uint16_t
+packetId	src/AsyncMqttClient/Storage.hpp	/^  uint16_t packetId;$/;"	m	struct:AsyncMqttClientInternals::PendingPubRel	typeref:typename:uint16_t
+packetType	src/AsyncMqttClient/ParsingInformation.hpp	/^  uint8_t packetType;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:uint8_t
+packetType	src/AsyncMqttClient/Storage.hpp	/^  uint8_t packetType;$/;"	m	struct:AsyncMqttClientInternals::PendingAck	typeref:typename:uint8_t
+parsePayload	src/AsyncMqttClient/Packets/ConnAckPacket.cpp	/^void ConnAckPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:ConnAckPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PingRespPacket.cpp	/^void PingRespPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PingRespPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PubAckPacket.cpp	/^void PubAckPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubAckPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PubCompPacket.cpp	/^void PubCompPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubCompPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PubRecPacket.cpp	/^void PubRecPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubRecPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PubRelPacket.cpp	/^void PubRelPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubRelPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/PublishPacket.cpp	/^void PublishPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PublishPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/SubAckPacket.cpp	/^void SubAckPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:SubAckPacket	typeref:typename:void
+parsePayload	src/AsyncMqttClient/Packets/UnsubAckPacket.cpp	/^void UnsubAckPacket::parsePayload(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:UnsubAckPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/ConnAckPacket.cpp	/^void ConnAckPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) /;"	f	class:ConnAckPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PingRespPacket.cpp	/^void PingRespPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition)/;"	f	class:PingRespPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PubAckPacket.cpp	/^void PubAckPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubAckPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PubCompPacket.cpp	/^void PubCompPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) /;"	f	class:PubCompPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PubRecPacket.cpp	/^void PubRecPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubRecPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PubRelPacket.cpp	/^void PubRelPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:PubRelPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/PublishPacket.cpp	/^void PublishPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) /;"	f	class:PublishPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/SubAckPacket.cpp	/^void SubAckPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition) {$/;"	f	class:SubAckPacket	typeref:typename:void
+parseVariableHeader	src/AsyncMqttClient/Packets/UnsubAckPacket.cpp	/^void UnsubAckPacket::parseVariableHeader(uint8_t* data, size_t len, size_t* currentBytePosition)/;"	f	class:UnsubAckPacket	typeref:typename:void
+parser	scripts/get-fingerprint/get-fingerprint.py	/^parser = argparse.ArgumentParser(description='Compute SSL\/TLS fingerprints.')$/;"	v
+platform	examples/FullyFeaturedSSL/platformio.ini	/^platform = espressif8266$/;"	k	section:env:nossl
+platform	examples/FullyFeaturedSSL/platformio.ini	/^platform = espressif8266_stage$/;"	k	section:env:ssl
+platformio	examples/FullyFeaturedSSL/platformio.ini	/^[platformio]$/;"	s
+platforms	library.json	/^      "platforms": "espressif8266"$/;"	s	object:dependencies.0
+platforms	library.json	/^      "platforms": ["espressif32", "libretiny"]$/;"	a	object:dependencies.1
+platforms	library.json	/^  "platforms": ["espressif8266", "espressif32", "rp2040", "libretiny"],$/;"	a
+publish	src/AsyncMqttClient.cpp	/^uint16_t AsyncMqttClient::publish(const char* topic, uint8_t qos, bool retain, const char* paylo/;"	f	class:AsyncMqttClient	typeref:typename:uint16_t
+qos	src/AsyncMqttClient/MessageProperties.hpp	/^  uint8_t qos;$/;"	m	struct:AsyncMqttClientMessageProperties	typeref:typename:uint8_t
+remainingLength	src/AsyncMqttClient/ParsingInformation.hpp	/^  uint32_t remainingLength;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:uint32_t
+repository	library.json	/^  "repository":$/;"	o
+retain	src/AsyncMqttClient/MessageProperties.hpp	/^  bool retain;$/;"	m	struct:AsyncMqttClientMessageProperties	typeref:typename:bool
+setCleanSession	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setCleanSession(bool cleanSession) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setClientId	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setClientId(const char* clientId) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setCredentials	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setCredentials(const char* username, const char* password) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setKeepAlive	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setKeepAlive(uint16_t keepAlive) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setMaxTopicLength	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setMaxTopicLength(uint16_t maxTopicLength) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setSecure	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setSecure(bool secure) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setServer	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setServer(IPAddress ip, uint16_t port) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setServer	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setServer(const char* host, uint16_t port) {$/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setWill	src/AsyncMqttClient.cpp	/^AsyncMqttClient& AsyncMqttClient::setWill(const char* topic, uint8_t qos, bool retain, const cha/;"	f	class:AsyncMqttClient	typeref:typename:AsyncMqttClient &
+setup	examples/FullyFeaturedSSL/src/main.cpp	/^void setup() {$/;"	f	typeref:typename:void
+sha1	scripts/get-fingerprint/get-fingerprint.py	/^sha1 = hashlib.sha1(cert_der).hexdigest()$/;"	v
+sha256	scripts/get-fingerprint/get-fingerprint.py	/^sha256 = hashlib.sha256(cert_der).hexdigest()$/;"	v
+subscribe	src/AsyncMqttClient.cpp	/^uint16_t AsyncMqttClient::subscribe(const char* topic, uint8_t qos) {$/;"	f	class:AsyncMqttClient	typeref:typename:uint16_t
+topicBuffer	src/AsyncMqttClient/ParsingInformation.hpp	/^  char* topicBuffer;$/;"	m	struct:AsyncMqttClientInternals::ParsingInformation	typeref:typename:char *
+type	library.json	/^    "type": "git",$/;"	s	object:repository
+uint16_t publish(const char\\* `topic`, uint8_t `qos`, bool `retain`, const char\\* `payload` = nullptr, size_t `length` = 0, bool dup = false, uint16_t message_id = 0)	docs/2.-API-reference.md	/^#### uint16_t publish(const char\\* `topic`, uint8_t `qos`, bool `retain`, const char\\* `payloa/;"	t	subsection:API reference""Operation functions
+uint16_t subscribe(const char\\* `topic`, uint8_t `qos`)	docs/2.-API-reference.md	/^#### uint16_t subscribe(const char\\* `topic`, uint8_t `qos`)$/;"	t	subsection:API reference""Operation functions
+uint16_t unsubscribe(const char\\* `topic`)	docs/2.-API-reference.md	/^#### uint16_t unsubscribe(const char\\* `topic`)$/;"	t	subsection:API reference""Operation functions
+unsubscribe	src/AsyncMqttClient.cpp	/^uint16_t AsyncMqttClient::unsubscribe(const char* topic) {$/;"	f	class:AsyncMqttClient	typeref:typename:uint16_t
+url	library.json	/^    "url": "https:\/\/github.com\/HeMan\/async-mqtt-client.git"$/;"	s	object:repository
+url	library.json	/^    "url": "https:\/\/www.marvinroger.fr"$/;"	s	object:authors
+version	library.json	/^      "version": "^2.0.0",$/;"	s	object:dependencies.0
+version	library.json	/^      "version": "^2.1.3",$/;"	s	object:dependencies.1
+version	library.json	/^  "version": "2.1.0",$/;"	s
+void connect()	docs/2.-API-reference.md	/^#### void connect()$/;"	t	subsection:API reference""Operation functions
+void disconnect(bool `force` = false)	docs/2.-API-reference.md	/^#### void disconnect(bool `force` = false)$/;"	t	subsection:API reference""Operation functions
+wifiConnectHandler	examples/FullyFeaturedSSL/src/main.cpp	/^WiFiEventHandler wifiConnectHandler;$/;"	v	typeref:typename:WiFiEventHandler
+wifiDisconnectHandler	examples/FullyFeaturedSSL/src/main.cpp	/^WiFiEventHandler wifiDisconnectHandler;$/;"	v	typeref:typename:WiFiEventHandler
+wifiReconnectTimer	examples/FullyFeaturedSSL/src/main.cpp	/^Ticker wifiReconnectTimer;$/;"	v	typeref:typename:Ticker
+~AsyncMqttClient	src/AsyncMqttClient.cpp	/^AsyncMqttClient::~AsyncMqttClient() {$/;"	f	class:AsyncMqttClient
+~ConnAckPacket	src/AsyncMqttClient/Packets/ConnAckPacket.cpp	/^ConnAckPacket::~ConnAckPacket() {$/;"	f	class:ConnAckPacket
+~Packet	src/AsyncMqttClient/Packets/Packet.hpp	/^  virtual ~Packet() {}$/;"	f	class:AsyncMqttClientInternals::Packet
+~PingRespPacket	src/AsyncMqttClient/Packets/PingRespPacket.cpp	/^PingRespPacket::~PingRespPacket() {$/;"	f	class:PingRespPacket
+~PubAckPacket	src/AsyncMqttClient/Packets/PubAckPacket.cpp	/^PubAckPacket::~PubAckPacket() {$/;"	f	class:PubAckPacket
+~PubCompPacket	src/AsyncMqttClient/Packets/PubCompPacket.cpp	/^PubCompPacket::~PubCompPacket() {$/;"	f	class:PubCompPacket
+~PubRecPacket	src/AsyncMqttClient/Packets/PubRecPacket.cpp	/^PubRecPacket::~PubRecPacket() {$/;"	f	class:PubRecPacket
+~PubRelPacket	src/AsyncMqttClient/Packets/PubRelPacket.cpp	/^PubRelPacket::~PubRelPacket() {$/;"	f	class:PubRelPacket
+~PublishPacket	src/AsyncMqttClient/Packets/PublishPacket.cpp	/^PublishPacket::~PublishPacket() {$/;"	f	class:PublishPacket
+~SubAckPacket	src/AsyncMqttClient/Packets/SubAckPacket.cpp	/^SubAckPacket::~SubAckPacket() {$/;"	f	class:SubAckPacket
+~UnsubAckPacket	src/AsyncMqttClient/Packets/UnsubAckPacket.cpp	/^UnsubAckPacket::~UnsubAckPacket() {$/;"	f	class:UnsubAckPacket

@@ -41,7 +41,9 @@ void MqttDual::begin() {
         Logger::log("mqtt_gh", "connected");
         _gh.subscribe(GH_CMD_TOPIC, 0);
         _gh.subscribe(GH_BRIDGE_HB_TOPIC, 0);
+        _gh.subscribe(GH_HA_SUB_TOPIC, 0);  // HA set parancsok
         publishHB();
+        publishHADiscovery();   // HA entitasok automatikus regisztracio
     });
 
     _gh.onDisconnect([this](AsyncMqttClientDisconnectReason r) {
@@ -62,6 +64,10 @@ void MqttDual::begin() {
         buf[min(len, sizeof(buf) - 1)] = 0;
         if (strcmp(topic, GH_BRIDGE_HB_TOPIC) == 0) {
             _handleGhHeartbeat(buf);
+            return;
+        }
+        if (strncmp(topic, GH_HA_SET_PFX, strlen(GH_HA_SET_PFX)) == 0) {
+            _handleHASet(topic + strlen(GH_HA_SET_PFX), buf);
             return;
         }
         _handleCmd(topic, buf);
@@ -156,9 +162,10 @@ void MqttDual::_handleCmd(const char* topic, const char* payload) {
     } else if (strcmp(cmd, "ota") == 0) {
         const char* url = doc["url"] | "";
         if (url[0]) {
-            strlcpy(g_config.ota_url, url, sizeof(g_config.ota_url));
-            extern void otaTriggerCheck();
-            otaTriggerCheck();
+            // Ha URL-t kap (direkt bin vagy version.txt), hasznaljuk a WithUrl varianssal
+            // hogy _override_url legyen beallitva es a version check ki legyen kerulve
+            extern void otaTriggerWithUrl(const char* binUrl);
+            otaTriggerWithUrl(url);
         }
 
     } else if (strcmp(cmd, "set_broker") == 0) {
@@ -197,6 +204,15 @@ void MqttDual::_handleCmd(const char* topic, const char* payload) {
         String out; serializeJson(resp, out);
         if (_g_connected)
             _gh.publish(GH_STATUS_TOPIC, 0, false, out.c_str());
+        // HA state frissitese a beolvasott ertekekkel
+        const char* HA_CTRL_KEYS[] = {
+            "solar_sell_en","grid_charge_en","work_mode",
+            "max_sell_power_w","max_bat_charge_a","max_bat_discharge_a","max_grid_charge_a"
+        };
+        for (const auto& k : HA_CTRL_KEYS) {
+            if (!resp[k].isNull()) _ha_state[k] = resp[k];
+        }
+        publishHAState();
 
     } else {
         if (_cmd_cb) _cmd_cb(cmd, doc["val"] | "");
@@ -215,4 +231,205 @@ void MqttDual::_handleGhHeartbeat(const char* payload) {
         Logger::log("peer_gh", "lwt_false");
         Serial.println("[PEER] Green Home reported alive:false");
     }
+}
+
+// ============================================================
+// publishHAState – HA control allapot kuldese (retained)
+// ============================================================
+void MqttDual::publishHAState() {
+    if (!_g_connected) return;
+    if (_ha_state.size() == 0) return;
+    String out; serializeJson(_ha_state, out);
+    _gh.publish(GH_HA_STATE_TOPIC, 0, true, out.c_str());
+}
+
+// ============================================================
+// _handleHASet – HA-bol erkező vezerlesi parancs feldolgozasa
+// Pl. ha/set/solar_sell_en payload "1" vagy "0"
+// ============================================================
+void MqttDual::_handleHASet(const char* key, const char* payload) {
+    struct RegMap { const char* key; uint16_t reg; };
+    static const RegMap MAP[] = {
+        {"solar_sell_en",      145},
+        {"grid_charge_en",     130},
+        {"work_mode",          142},
+        {"max_sell_power_w",   143},
+        {"max_bat_charge_a",   108},
+        {"max_bat_discharge_a",109},
+        {"max_grid_charge_a",  128},
+    };
+
+    uint16_t reg = 0;
+    for (const auto& m : MAP) {
+        if (strcmp(key, m.key) == 0) { reg = m.reg; break; }
+    }
+    if (reg == 0) {
+        Serial.printf("[HA] Ismeretlen key: %s\n", key);
+        return;
+    }
+
+    int val = atoi(payload);  // HA command_template mar numerikust kuld
+    extern bool safeWriteRegister(uint16_t, uint16_t, String&);
+    String err;
+    bool ok = safeWriteRegister(reg, (uint16_t)val, err);
+
+    Serial.printf("[HA] set %s=%d reg=%u %s\n", key, val, reg, ok ? "OK" : err.c_str());
+    Logger::log("ha_set", ok ? "ok" : "fail");
+
+    if (ok) {
+        // Optimista state frissites – nem kell modbus ujraolvasas
+        _ha_state[key] = val;
+        publishHAState();
+    }
+}
+
+// ============================================================
+// publishHADiscovery – HA entitasok auto-regisztracio
+// Minden retained QoS0 => HA azonnali felismerés indulas utan
+// ============================================================
+void MqttDual::publishHADiscovery() {
+    if (!_g_connected) return;
+
+    // --- Kozos device blokk lambda ---
+    auto buildDev = [](JsonDocument& doc) {
+        JsonArray ids = doc["device"]["identifiers"].to<JsonArray>();
+        ids.add(GH_HA_DEV_ID);
+        doc["device"]["name"]         = "P485 Green Home Dongle";
+        doc["device"]["model"]        = "P485/ADA485 ESP32";
+        doc["device"]["manufacturer"] = "Green Home Technologies";
+        doc["device"]["sw_version"]   = FW_VERSION;
+    };
+
+    // --- SENSOR entitasok ---
+    struct SensorDef {
+        const char* key;
+        const char* name;
+        const char* unit;
+        const char* dev_cls;
+        const char* st_cls;
+    };
+    static const SensorDef SENSORS[] = {
+        {"pv_w",    "PV Teljesítmény",           "W",   "power",       "measurement"},
+        {"pv1_w",   "PV1 Teljesítmény",           "W",   "power",       "measurement"},
+        {"pv2_w",   "PV2 Teljesítmény",           "W",   "power",       "measurement"},
+        {"bat_soc", "Akku SOC",                   "%",   "battery",     "measurement"},
+        {"bat_v",   "Akku Feszültség",             "V",   "voltage",     "measurement"},
+        {"bat_w",   "Akku Teljesítmény",           "W",   "power",       "measurement"},
+        {"bat_tmp", "Akku Hőmérséklet",            "°C",  "temperature", "measurement"},
+        {"grid_w",  "Hálózat Teljesítmény",        "W",   "power",       "measurement"},
+        {"grid_u1", "Hálózat Feszültség L1",       "V",   "voltage",     "measurement"},
+        {"grid_u2", "Hálózat Feszültség L2",       "V",   "voltage",     "measurement"},
+        {"grid_u3", "Hálózat Feszültség L3",       "V",   "voltage",     "measurement"},
+        {"freq",    "Hálózati Frekvencia",          "Hz",  "frequency",   "measurement"},
+        {"load_w",  "Fogyasztás",                   "W",   "power",       "measurement"},
+        {"e_pv",    "Napi PV Termelés",             "kWh", "energy",      "total_increasing"},
+        {"e_buy",   "Napi Vásárlás",                "kWh", "energy",      "total_increasing"},
+        {"e_sell",  "Napi Eladás",                  "kWh", "energy",      "total_increasing"},
+        {"e_bchg",  "Napi Akku Töltés",             "kWh", "energy",      "total_increasing"},
+        {"e_bdis",  "Napi Akku Kisütés",            "kWh", "energy",      "total_increasing"},
+        {"temp_dc", "Inverter DC Hőmérséklet",      "°C",  "temperature", "measurement"},
+        {"temp_ac", "Inverter AC Hőmérséklet",      "°C",  "temperature", "measurement"},
+        {"stat",    "Inverter Állapot",             nullptr, nullptr,     "measurement"},
+    };
+
+    for (const auto& s : SENSORS) {
+        JsonDocument doc;
+        buildDev(doc);
+        doc["name"]              = s.name;
+        doc["unique_id"]         = String(GH_HA_DEV_ID) + "_" + s.key;
+        doc["state_topic"]       = GH_DATA_TOPIC;
+        doc["value_template"]    = String("{{ value_json.") + s.key + " }}";
+        if (s.unit)    doc["unit_of_measurement"] = s.unit;
+        if (s.dev_cls) doc["device_class"]        = s.dev_cls;
+        if (s.st_cls)  doc["state_class"]         = s.st_cls;
+        doc["availability_topic"]        = GH_HB_TOPIC;
+        doc["availability_template"]     = "{{ 'online' if value_json.alive else 'offline' }}";
+        String topic = String(GH_HA_DISC_PFX) + "/sensor/" GH_HA_DEV_ID "/" + s.key + "/config";
+        String out; serializeJson(doc, out);
+        _gh.publish(topic.c_str(), 0, true, out.c_str());
+        delay(25);
+    }
+
+    // --- SWITCH entitasok ---
+    struct SwDef { const char* key; const char* name; };
+    static const SwDef SWITCHES[] = {
+        {"solar_sell_en",  "Napelem Értékesítés"},
+        {"grid_charge_en", "Hálózati Töltés"},
+    };
+    for (const auto& sw : SWITCHES) {
+        JsonDocument doc;
+        buildDev(doc);
+        doc["name"]                  = sw.name;
+        doc["unique_id"]             = String(GH_HA_DEV_ID) + "_" + sw.key;
+        doc["state_topic"]           = GH_HA_STATE_TOPIC;
+        doc["value_template"]        = String("{{ value_json.") + sw.key + " }}";
+        doc["state_on"]              = "1";
+        doc["state_off"]             = "0";
+        doc["command_topic"]         = String(GH_HA_SET_PFX) + sw.key;
+        doc["payload_on"]            = "1";
+        doc["payload_off"]           = "0";
+        doc["availability_topic"]    = GH_HB_TOPIC;
+        doc["availability_template"] = "{{ 'online' if value_json.alive else 'offline' }}";
+        String topic = String(GH_HA_DISC_PFX) + "/switch/" GH_HA_DEV_ID "/" + sw.key + "/config";
+        String out; serializeJson(doc, out);
+        _gh.publish(topic.c_str(), 0, true, out.c_str());
+        delay(25);
+    }
+
+    // --- NUMBER entitasok ---
+    struct NumDef { const char* key; const char* name; const char* unit; int mn; int mx; int step; };
+    static const NumDef NUMBERS[] = {
+        {"max_sell_power_w",    "Max Eladási Teljesítmény", "W",  0, 8000, 100},
+        {"max_bat_charge_a",    "Max Akku Töltő Áram",      "A",  0,  200,   5},
+        {"max_bat_discharge_a", "Max Akku Kisütő Áram",     "A",  0,  200,   5},
+        {"max_grid_charge_a",   "Max Hálózati Töltő Áram",  "A",  0,  200,   5},
+    };
+    for (const auto& n : NUMBERS) {
+        JsonDocument doc;
+        buildDev(doc);
+        doc["name"]                  = n.name;
+        doc["unique_id"]             = String(GH_HA_DEV_ID) + "_" + n.key;
+        doc["state_topic"]           = GH_HA_STATE_TOPIC;
+        doc["value_template"]        = String("{{ value_json.") + n.key + " }}";
+        doc["command_topic"]         = String(GH_HA_SET_PFX) + n.key;
+        doc["unit_of_measurement"]   = n.unit;
+        doc["min"]                   = n.mn;
+        doc["max"]                   = n.mx;
+        doc["step"]                  = n.step;
+        doc["mode"]                  = "box";
+        doc["availability_topic"]    = GH_HB_TOPIC;
+        doc["availability_template"] = "{{ 'online' if value_json.alive else 'offline' }}";
+        String topic = String(GH_HA_DISC_PFX) + "/number/" GH_HA_DEV_ID "/" + n.key + "/config";
+        String out; serializeJson(doc, out);
+        _gh.publish(topic.c_str(), 0, true, out.c_str());
+        delay(25);
+    }
+
+    // --- SELECT: work_mode ---
+    {
+        JsonDocument doc;
+        buildDev(doc);
+        doc["name"]                  = "Üzemmód";
+        doc["unique_id"]             = String(GH_HA_DEV_ID) + "_work_mode";
+        doc["state_topic"]           = GH_HA_STATE_TOPIC;
+        doc["value_template"]        = "{% set m = value_json.work_mode | int %}"
+                                       "{% if m == 0 %}Sell"
+                                       "{% elif m == 2 %}Zero Export"
+                                       "{% else %}Unknown{% endif %}";
+        doc["command_topic"]         = String(GH_HA_SET_PFX) + "work_mode";
+        doc["command_template"]      = "{% if value == 'Sell' %}0"
+                                       "{% elif value == 'Zero Export' %}2"
+                                       "{% else %}0{% endif %}";
+        JsonArray opts = doc["options"].to<JsonArray>();
+        opts.add("Sell");
+        opts.add("Zero Export");
+        doc["availability_topic"]    = GH_HB_TOPIC;
+        doc["availability_template"] = "{{ 'online' if value_json.alive else 'offline' }}";
+        String topic = String(GH_HA_DISC_PFX) + "/select/" GH_HA_DEV_ID "/work_mode/config";
+        String out; serializeJson(doc, out);
+        _gh.publish(topic.c_str(), 0, true, out.c_str());
+    }
+
+    Serial.println("[HA] Discovery published (" GH_HA_DEV_ID ")");
+    Logger::log("ha_disc", "ok");
 }

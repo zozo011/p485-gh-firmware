@@ -41,6 +41,13 @@
 // Green Home bridge heartbeat (visszirányú felügyelet)
 #define GH_BRIDGE_HB_TOPIC "green_home/gh_bridge/hb"
 
+// ---- Home Assistant MQTT Discovery -------------------------
+#define GH_HA_DISC_PFX    "homeassistant"
+#define GH_HA_DEV_ID      "p485_" P485_MAC
+#define GH_HA_SET_PFX     "green_home/" P485_MAC "/ha/set/"
+#define GH_HA_STATE_TOPIC "green_home/" P485_MAC "/ha/state"
+#define GH_HA_SUB_TOPIC   "green_home/" P485_MAC "/ha/set/#"
+
 // ---- Hardware pinout ----------------------------------------
 #ifndef RS485_TX
 #  define RS485_TX 17
